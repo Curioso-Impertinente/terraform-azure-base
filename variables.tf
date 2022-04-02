@@ -36,3 +36,9 @@ variable "ngw_pip_sku" {
   description = "SKU tier for Nat Gateway public IP. (Default: Basic)"
   default = "Basic"
 }
+
+variable "subnets" {
+  type = list
+  description = "Subnets in Vnet."
+  default = []
+}

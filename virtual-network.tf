@@ -7,7 +7,7 @@ locals {
   )
 }
 
-resource "azurerm_virtual_network" "vnet" {
+resource "azurerm_virtual_network" "base" {
   name                = "vnet-${var.name}-${var.environment}-${azurerm_resource_group.base.location}"
   location            = azurerm_resource_group.base.location
   resource_group_name = azurerm_resource_group.base.name
