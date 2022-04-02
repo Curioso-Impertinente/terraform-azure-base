@@ -31,12 +31,6 @@ variable "environment" {
   description = "Project's environment."
 }
 
-variable "ngw_pip_sku" {
-  type    = string
-  description = "SKU tier for Nat Gateway public IP. (Default: Basic)"
-  default = "Basic"
-}
-
 variable "subnets" {
   type = list
   description = "Subnets in Vnet."

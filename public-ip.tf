@@ -3,7 +3,7 @@ resource "azurerm_public_ip" "pip" {
   location            = azurerm_resource_group.base.location
   resource_group_name = azurerm_resource_group.base.name
   allocation_method   = "Static"
-  sku                 = var.ngw_pip_sku
+  sku                 = "Standard"
 
   tags = local.tags
 }
