@@ -1,7 +1,7 @@
 resource "azurerm_subnet" "snet" {
   for_each = toset(var.subnets)
 
-  name                 = "snet-${each.value}"
+  name                 = "snet-${each.value}-${var.environment}-${azurerm_resource_group.base.location}-001"
   resource_group_name  = azurerm_resource_group.base.name
   virtual_network_name = azurerm_virtual_network.base.name
   address_prefixes     = [cidrsubnet(var.address_space[0], 8, (index(var.subnets, each.value) + 1))]
