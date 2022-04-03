@@ -10,6 +10,6 @@ resource "azurerm_subnet" "snet" {
 resource "azurerm_subnet_nat_gateway_association" "subnet_ngw" {
   for_each = toset(var.subnets)
 
-  subnet_id = azurerm_subnet.snet[each.key].id
+  subnet_id      = azurerm_subnet.snet[each.key].id
   nat_gateway_id = azurerm_nat_gateway.ngw.id
 }

@@ -1,9 +1,10 @@
 resource "azurerm_public_ip" "pip" {
-  name                = "pip-ngw-${var.name}-${var.environment}-${azurerm_resource_group.base.location}"
+  name                = "pip-base-${var.environment}-${azurerm_resource_group.base.location}-001"
   location            = azurerm_resource_group.base.location
   resource_group_name = azurerm_resource_group.base.name
   allocation_method   = "Static"
   sku                 = "Standard"
+  zones               = var.natgw_availability_zones
 
   tags = local.tags
 }
