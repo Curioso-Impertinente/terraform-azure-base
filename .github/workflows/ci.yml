@@ -45,6 +45,9 @@ jobs:
         with:
           fetch-depth: 0
           token: "${{ secrets.GITHUB_TOKEN }}"
+      
+      - name: list
+        run: ls
 
       - name: "Security Analysis"
         uses: reviewdog/action-tfsec@master
