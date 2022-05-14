@@ -1,8 +1,3 @@
-variable "name" {
-  type        = string
-  description = "Project name."
-}
-
 variable "location" {
   type        = string
   description = "Resource group location. (Default: francecentral)"
