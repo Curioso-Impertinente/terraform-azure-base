@@ -6,6 +6,25 @@ on:
       - master
 
 jobs:
+  lint:
+    name: "Lint terraform code"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: terraform-linters/setup-tflint@v1
+        name: Setup TFLint
+        with:
+          tflint_version: latest
+
+      - name: Show version
+        run: tflint --version
+
+      - name: Init TFLint
+        run: tflint --init
+
+      - name: Run TFLint
+        run: tflint -f compact
+
   bump_version:
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
     name: "Bump version and create changelog with commitizen"
@@ -17,10 +36,12 @@ jobs:
         with:
           fetch-depth: 0
           token: "${{ secrets.GITHUB_TOKEN }}"
+
       - id: cz
         name: Create bump and changelog
         uses: commitizen-tools/commitizen-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Print Version
         run: echo "Bumped to version ${{ steps.cz.outputs.version }}"
