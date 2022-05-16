@@ -1,3 +1,3 @@
 # Base
 
-Base environment infrastructure.
+Base environment infrastructure for Azure.
