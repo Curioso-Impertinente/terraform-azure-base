@@ -37,3 +37,8 @@ variable "natgw_availability_zones" {
   description = "Availability zones for Nat Gateway."
   default     = ["1"]
 }
+
+variable "tenant_id" {
+  type        = string
+  description = "Tenant ID to be used with keyvault creation."
+}
