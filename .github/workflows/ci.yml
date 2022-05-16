@@ -18,20 +18,19 @@ jobs:
 
       - name: terraform fmt
         uses: dflook/terraform-fmt@v1
-        with:
-          path: my-terraform-config
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v2
         with:
-          commit-message: terraform fmt
+          commit-message: "style: terraform fmt"
           title: Reformat terraform files
           body: Update terraform files to canonical format using `terraform fmt`
-          branch: automated-terraform-fmt
+          branch: auto-terraform-format
 
   lint:
     name: "Lint Code"
     runs-on: ubuntu-latest
+    needs: format
 
     steps:
       - name: Check out code
