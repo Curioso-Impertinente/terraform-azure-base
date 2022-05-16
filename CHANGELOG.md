@@ -1,3 +1,10 @@
+## 0.5.2 (2022-05-16)
+
+### Fix
+
+- wrong reference
+- rg reference
+
 ## 0.5.1 (2022-05-16)
 
 ### Fix
