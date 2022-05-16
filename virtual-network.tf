@@ -1,12 +1,3 @@
-locals {
-  tags = merge(
-    var.tags,
-    {
-      env = var.environment
-    }
-  )
-}
-
 resource "azurerm_virtual_network" "base" {
   name                = "vnet-base-${var.environment}-${azurerm_resource_group.base.location}-001"
   location            = azurerm_resource_group.base.location

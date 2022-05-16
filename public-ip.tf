@@ -1,5 +1,5 @@
 resource "azurerm_public_ip" "pip" {
-  name                = "pip-base-${var.environment}-${azurerm_resource_group.base.location}-001"
+  name                = "pip-${local.base}-${var.environment}-${azurerm_resource_group.base.location}-001"
   location            = azurerm_resource_group.base.location
   resource_group_name = azurerm_resource_group.base.name
   allocation_method   = "Static"
