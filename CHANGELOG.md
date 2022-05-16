@@ -1,3 +1,9 @@
+## 0.5.1 (2022-05-16)
+
+### Fix
+
+- keyvault and add tenant_id var
+
 ## 0.5.0 (2022-05-16)
 
 ### Feat
