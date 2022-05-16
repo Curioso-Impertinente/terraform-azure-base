@@ -1,7 +1,7 @@
 resource "azurerm_key_vault" "base" {
   name                        = "kv-curimp-${local.name}-${var.environment}"
-  location                    = data.azurerm_resource_group.base.location
-  resource_group_name         = data.azurerm_resource_group.base.name
+  location                    = azurerm_resource_group.base.location
+  resource_group_name         = azurerm_resource_group.base.name
   enabled_for_disk_encryption = true
   tenant_id                   = var.tenant_id
   soft_delete_retention_days  = 7
